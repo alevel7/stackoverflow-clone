@@ -37,7 +37,9 @@ router.get("/:id", async (req, res) => {
 router.post("/:id/comment", async (req, res) => {
     try {
 		const quest = await question.findOne({ _id: req.params.id })
-		
+		quest.comment.push(req.body.comment)
+        await quest.save()
+        res.send(quest)
 	} catch {
 		res.status(404)
 		res.send({ error: "Question doesn't exist!" })
