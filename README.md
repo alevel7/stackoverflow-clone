@@ -7,14 +7,11 @@ method  POST
 endpoint /api/questions
 #### comment on a question
 method  POST
-endpoint /question/comment
+endpoint /api/question/:id/comment
 
 #### retrieve all question without comments
 method  GET
 endpoint /api/questions
 #### retrieve a question with its comments
 method  GET
-endpoint /api/questions/:id
-#### search a question
-method  GET
-endpoint /question?lang=python
+endpoint /api/questions/:i
